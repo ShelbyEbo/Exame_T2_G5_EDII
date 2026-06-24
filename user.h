@@ -16,6 +16,6 @@ typedef struct User
 } User;
 
 User    *create_user(int id, char *name);
-User    *destroy_user(User *user);
+void    destroy_user(User *user);
 
 #endif

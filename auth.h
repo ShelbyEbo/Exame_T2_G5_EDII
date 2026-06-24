@@ -9,10 +9,11 @@ typedef struct Auth
     User    *current_user;
 } Auth;
 
-Auth *init_auth();
-void logout(Auth *auth);
-void block_user(User *user);
-void unblock_user(User *user);
-void login(Auth *auth, int user_id);
+Auth    *init_auth();
+void    logout(Auth *auth);
+void    block_user(User *user);
+void    destroy_auth(Auth *auth);
+void    unblock_user(User *user);
+void    login(Auth *auth, int user_id);
 
 #endif

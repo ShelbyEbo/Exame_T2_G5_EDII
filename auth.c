@@ -45,3 +45,21 @@ void unblock_user(User *user)
     if (user)
         user->blocked = 0;
 }
+
+Auth *init_auth()
+{
+    Auth *auth = malloc(sizeof(Auth));
+    if (!auth)
+        return NULL;
+    auth->users = NULL;
+    auth->current_user = NULL;
+    return auth;
+}
+
+void destroy_auth(Auth *auth)
+{
+    if (!auth)
+        return;
+
+    free(auth);
+}
