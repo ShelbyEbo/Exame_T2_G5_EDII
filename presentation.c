@@ -31,16 +31,14 @@ static int get_int(const char *prompt, int *value)
     }
 }
 
-static int get_string(const char *prompt, char *buf, int size)
+static int get_string(const char *prompt, char *buf)
 {
-    char format[16];
     int r;
 
-    snprintf(format, sizeof(format), "%%%ds", size - 1);
     while (1)
     {
         printf("%s", prompt);
-        r = scanf(format, buf);
+        r = scanf("%99s", buf);
         if (r == EOF)
         {
             printf("\nA sair...\n");
@@ -60,7 +58,7 @@ int menu_create_user(Auth *auth)
 
     if (get_int("ID: ", &id) != 1)
         return 0;
-    if (get_string("Nome: ", name, 100) != 1)
+    if (get_string("Nome: ", name) != 1)
         return 0;
 
     if (find_user(auth->users, id))
