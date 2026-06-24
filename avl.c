@@ -1,4 +1,5 @@
 #include "avl.h"
+#include "user.h"
 
 static int height(AVL *n)
 {

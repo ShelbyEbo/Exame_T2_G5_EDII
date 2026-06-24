@@ -1,4 +1,6 @@
 #include "auth.h"
+#include "user.h"
+#include "avl.h"
 
 void login(Auth *auth, int user_id)
 {

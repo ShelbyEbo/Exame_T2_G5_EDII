@@ -3,7 +3,8 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "user.h"
+
+typedef struct User User;
 
 typedef struct AVLNode
 {

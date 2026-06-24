@@ -1,7 +1,11 @@
 #ifndef AUTH_H
 # define AUTH_H
 
-#include "avl.h"
+# include <stdlib.h>
+# include <stdio.h>
+
+typedef struct AVLNode AVL;
+typedef struct User User;
 
 typedef struct Auth
 {
