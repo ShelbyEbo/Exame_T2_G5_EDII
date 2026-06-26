@@ -1,31 +1,36 @@
-NAME = exame
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+NAME    = exame
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror -I includes
 
-SRCS = auth.c \
-	avl.c \
-	main.c \
-	presentation.c \
-	file.c \
-	heap.c \
-	huffman.c \
-	storage.c 
+SRCS    = srcs/auth.c        \
+          srcs/avl.c         \
+          srcs/user.c        \
+          srcs/file.c        \
+          srcs/heap.c        \
+          srcs/huffman.c     \
+          srcs/storage.c     \
+          srcs/chat.c        \
+          srcs/graph.c       \
+          srcs/report.c      \
+          srcs/presentation.c \
+          srcs/main.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS    = $(SRCS:srcs/%.c=obj/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c
+obj/%.o: srcs/%.c
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf obj
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
