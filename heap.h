@@ -18,7 +18,8 @@ typedef struct
     int capacidade;
     No **dados;
 } MinHeap;
-char codigos[MAX_CHAR][MAX_CODE];
+
+extern char codigos[MAX_CHAR][MAX_CODE];
 
 No* criarNo(char c, int freq);
 MinHeap* criarHeap(int capacidade);

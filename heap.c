@@ -1,5 +1,7 @@
 #include "heap.h"
 
+char codigos[MAX_CHAR][MAX_CODE];
+
 No* criarNo(char c, int freq)
 {
     No *novo = (No*)malloc(sizeof(No));

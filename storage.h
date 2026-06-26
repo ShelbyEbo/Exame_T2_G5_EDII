@@ -10,4 +10,7 @@ typedef struct
     int tamanhoComprimido;
 } Registro;
 
+void salvarRegistro(Registro r);
+void carregarRegistros();
+
 #endif
